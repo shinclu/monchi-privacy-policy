@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hỗ trợ MonChi · MonChi Support</title>
+    <meta
+      name="description"
+      content="Liên hệ hỗ trợ kỹ thuật hoặc góp ý cho ứng dụng MonChi. Contact MonChi support or send feedback."
+    />
+    <style>
+      :root {
+        --ink: #1c1b17;
+        --muted: #5f5a4f;
+        --line: #e4ded2;
+        --surface: #fcf9f4;
+        --card: #ffffff;
+        --accent: #b8431c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--surface);
+        color: var(--ink);
+        font:
+          16px/1.65 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 32px 16px 64px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 1.25;
+        margin: 0 0 8px;
+      }
+      a {
+        color: var(--accent);
+      }
+      nav a {
+        margin-right: 16px;
+        font-weight: 600;
+      }
+      .card {
+        margin: 16px 0;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--card);
+      }
+      label {
+        display: block;
+        margin: 16px 0 6px;
+        font-weight: 600;
+      }
+      label:first-child {
+        margin-top: 0;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        color: var(--ink);
+        font: inherit;
+      }
+      textarea {
+        min-height: 160px;
+        resize: vertical;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--accent);
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .primary {
+        background: var(--accent);
+        color: #ffffff;
+      }
+      .secondary {
+        background: transparent;
+        color: var(--accent);
+      }
+      .note {
+        margin-top: 16px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Cần hỗ trợ về MonChi?</h1>
+      <p class="muted">Ứng dụng: MonChi · Nhà phát triển: Shin Pham</p>
+      <nav aria-label="Trang khác / Other pages">
+        <a href="./">Chính sách quyền riêng tư</a>
+        <a href="./delete-account.html">Xoá tài khoản</a>
+      </nav>
+      <p>
+        Gặp lỗi, có câu hỏi hay muốn góp ý cho MonChi? Điền vào mẫu dưới đây,
+        tụi mình sẽ trả lời qua email trong vòng 2 ngày làm việc.
+        <span lang="en" class="muted"
+          >Need help or want to share feedback? Fill in the form and we will
+          reply by email within two working days.</span
+        >
+      </p>
+
+      <form class="card" id="support">
+        <label for="email">Email của bạn / Your email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="ban@email.com"
+        />
+
+        <label for="type">Loại yêu cầu / Request type</label>
+        <select id="type" name="type">
+          <option value="Hỗ trợ kỹ thuật">Hỗ trợ kỹ thuật</option>
+          <option value="Góp ý">Góp ý</option>
+        </select>
+
+        <label for="message">Nội dung / Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          placeholder="Bạn gặp vấn đề gì, trên điện thoại nào? Ví dụ: iPhone 15, iOS 26…"
+        ></textarea>
+
+        <div class="actions">
+          <button type="submit" class="primary">Gửi / Send</button>
+          <button type="reset" class="secondary">Xoá hết / Clear</button>
+        </div>
+        <p class="note muted">
+          Nút “Gửi” mở ứng dụng email của bạn với nội dung đã điền sẵn. Nếu
+          không mở được, hãy gửi email trực tiếp tới
+          <a href="mailto:sh7nclu@gmail.com">sh7nclu@gmail.com</a>.
+        </p>
+      </form>
+    </main>
+
+    <script>
+      // A static page cannot send email itself: "Gửi" hands the message to the visitor's own
+      // email app, addressed to the support inbox, with everything they typed in the body.
+      var TO = "sh7nclu@gmail.com";
+      document
+        .getElementById("support")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var form = event.target;
+          var type = form.elements.type.value;
+          var subject = "[MonChi] " + type;
+          var body =
+            "Loại yêu cầu: " +
+            type +
+            "\n" +
+            "Email liên hệ: " +
+            form.elements.email.value +
+            "\n\n" +
+            form.elements.message.value +
+            "\n";
+          window.location.href =
+            "mailto:" +
+            TO +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+        });
+    </script>
+  </body>
+</html>
