@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nguồn số liệu dinh dưỡng · MonChi nutrition sources</title>
+    <meta
+      name="description"
+      content="Các số liệu dinh dưỡng trong MonChi đến từ đâu và được tính như thế nào. Where MonChi's nutrition figures come from and how they are calculated."
+    />
+    <style>
+      :root {
+        --ink: #1c1b17;
+        --muted: #5f5a4f;
+        --line: #e4ded2;
+        --surface: #fcf9f4;
+        --card: #ffffff;
+        --accent: #b8431c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--surface);
+        color: var(--ink);
+        font:
+          16px/1.65 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 32px 16px 64px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 1.25;
+        margin: 0 0 8px;
+      }
+      h2 {
+        font-size: 20px;
+        line-height: 1.3;
+        margin: 32px 0 8px;
+      }
+      a {
+        color: var(--accent);
+      }
+      nav a {
+        margin-right: 16px;
+        font-weight: 600;
+      }
+      .card {
+        margin: 16px 0;
+        padding: 4px 20px 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--card);
+      }
+      .notice {
+        padding: 12px 16px;
+        border-left: 4px solid var(--accent);
+        background: #fff4ee;
+        border-radius: 0 8px 8px 0;
+      }
+      li {
+        margin: 6px 0;
+      }
+      section[lang="en"] {
+        margin-top: 64px;
+        padding-top: 8px;
+        border-top: 4px solid var(--line);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- ============================== TIẾNG VIỆT ============================== -->
+      <section id="vi" lang="vi">
+        <h1>Nguồn số liệu dinh dưỡng</h1>
+        <p class="muted">Ứng dụng: MonChi · Nhà phát triển: Shin Pham</p>
+        <nav aria-label="Ngôn ngữ / Language">
+          <a href="#en">English</a>
+          <a href="./">Chính sách quyền riêng tư</a>
+          <a href="./support.html">Hỗ trợ</a>
+        </nav>
+
+        <p class="notice">
+          Mọi con số về calo, chất đạm, chất béo, carbohydrate và chất xơ trong
+          MonChi là <strong>ước tính cho một khẩu phần thông thường</strong>,
+          nhằm giúp bạn chọn bữa tối dễ hơn. Chúng không phải là lời khuyên y
+          tế, không thay thế tư vấn của bác sĩ hay chuyên gia dinh dưỡng, và
+          không dùng để điều trị hay quản lý bệnh. Nếu bạn có bệnh lý, đang mang
+          thai, cho con bú hoặc cần chế độ ăn đặc biệt, hãy hỏi ý kiến người có
+          chuyên môn trước khi dựa vào các con số này.
+        </p>
+
+        <div class="card">
+          <h2>1. Giá trị dinh dưỡng của nguyên liệu</h2>
+          <p>
+            Năng lượng và các chất dinh dưỡng của nguyên liệu (tính trên 100 g
+            phần ăn được) lấy từ:
+          </p>
+          <ul>
+            <li>
+              Viện Dinh dưỡng Quốc gia, Bộ Y tế. Dữ liệu năng lượng theo món ăn
+              tham khảo, công cụ tra cứu trực tuyến
+              <a
+                href="https://viendinhduong.vn/vi/cong-cu-va-tien-ich/gia-tri-dinh-duong-thuc-pham"
+                rel="noopener"
+                >https://viendinhduong.vn/vi/cong-cu-va-tien-ich/gia-tri-dinh-duong-thuc-pham</a
+              >. Khối lượng từng nguyên liệu trong công thức được trích xuất và
+              tổng hợp lại bởi MonChi từ nguồn trên.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>2. Giá trị dinh dưỡng của món ăn mẫu</h2>
+          <p>
+            Các món ăn tham khảo (ví dụ “Cơm gà xé”, “Canh chua cá”) được tính
+            từ công thức gồm khối lượng từng nguyên liệu, áp dụng giá trị ở mục
+            1. Danh sách công thức tham khảo dựa trên:
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://viendinhduong.vn/vi/cong-cu-va-tien-ich/gia-tri-dinh-duong-mon-an"
+                >https://viendinhduong.vn/vi/cong-cu-va-tien-ich/gia-tri-dinh-duong-mon-an</a
+              >
+            </li>
+          </ul>
+          <p>
+            Khi bạn tự thêm món hoặc đổi nguyên liệu, giá trị có thể được “Bếp
+            trưởng AI” ước tính lại từ công thức bạn mô tả (mục 5).
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>3. Mục tiêu năng lượng và chất đạm gợi ý</h2>
+          <p>
+            Khi bạn chưa đặt mục tiêu, ứng dụng dùng
+            <strong>2.000 kcal</strong> và
+            <strong>65 g chất đạm mỗi ngày</strong> làm giá trị tham khảo cho
+            người lớn có mức vận động trung bình. Bạn có thể chỉnh trong thẻ
+            “Tôi”. Căn cứ:
+          </p>
+          <ul>
+            <li>
+              Bộ Y tế, Viện Dinh dưỡng.
+              <em>Nhu cầu dinh dưỡng khuyến nghị cho người Việt Nam</em>. Nhà
+              xuất bản Y học, 2016.
+              <a href="https://viendinhduong.vn/" rel="noopener"
+                >viendinhduong.vn</a
+              >
+            </li>
+            <li>
+              FAO/WHO/UNU. <em>Human energy requirements</em>. Report of a Joint
+              Expert Consultation, Rome, 2001 (FAO Food and Nutrition Technical
+              Report Series 1).
+              <a href="https://www.fao.org/4/y5686e/y5686e00.htm" rel="noopener"
+                >fao.org</a
+              >
+            </li>
+            <li>
+              WHO/FAO/UNU.
+              <em>Protein and amino acid requirements in human nutrition</em>.
+              WHO Technical Report Series 935, 2007 (0,83 g/kg cân nặng/ngày cho
+              người lớn).
+              <a
+                href="https://www.who.int/publications/i/item/WHO-TRS-935"
+                rel="noopener"
+                >who.int</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>4. Cách tính trong ứng dụng</h2>
+          <ul>
+            <li>
+              <strong>Năng lượng từ chất đạm, carbohydrate, chất béo:</strong>
+              4, 4 và 9 kcal cho mỗi gram (hệ số Atwater). FAO.
+              <em>Food energy – methods of analysis and conversion factors</em>.
+              FAO Food and Nutrition Paper 77, Rome, 2003.
+              <a href="https://www.fao.org/4/y5022e/y5022e00.htm" rel="noopener"
+                >fao.org</a
+              >
+            </li>
+            <li>
+              <strong>Nhãn “Lành mạnh” trên công thức:</strong> được hiện khi
+              một bữa chính có không quá 750 kcal, ít nhất 20 g chất đạm và chất
+              béo cung cấp không quá 35% năng lượng. Mức 35% là giới hạn trên
+              của khoảng phân bố chất béo chấp nhận được cho người lớn (20–35%
+              năng lượng) theo Institute of Medicine (US).
+              <em
+                >Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat,
+                Fatty Acids, Cholesterol, Protein, and Amino Acids</em
+              >. National Academies Press, 2005.
+              <a
+                href="https://nap.nationalacademies.org/catalog/10490"
+                rel="noopener"
+                >nap.nationalacademies.org</a
+              >. Đây là một nhãn gợi ý đơn giản, không phải đánh giá y khoa.
+            </li>
+            <li>
+              <strong>Gợi ý món cho bữa tối:</strong> ứng dụng giả định bữa tối
+              chiếm khoảng 35% năng lượng cả ngày để ưu tiên các món gần mục
+              tiêu của bạn. Đây là giả định để xếp thực đơn, không phải khuyến
+              nghị y tế.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>5. Ước tính bằng AI</h2>
+          <p>
+            Với món bạn tự thêm, “Bếp trưởng AI” (mô hình ngôn ngữ của Google
+            Gemini) có thể ước tính dinh dưỡng từ tên món và nguyên liệu bạn mô
+            tả, dựa trên các nguồn ở mục 1 và 2 cùng kiến thức chung của mô
+            hình. Ước tính này có thể sai lệch; ứng dụng luôn ghi rõ “ước tính”
+            và bạn có thể sửa lại trước khi lưu.
+          </p>
+        </div>
+
+        <p class="muted">
+          Thắc mắc về số liệu? Liên hệ qua
+          <a href="./support.html">trang hỗ trợ</a>.
+        </p>
+      </section>
+
+      <!-- ============================== ENGLISH ============================== -->
+      <section id="en" lang="en">
+        <h1>Nutrition data sources</h1>
+        <p class="muted">App: MonChi · Developer: Shin Pham</p>
+        <nav aria-label="Language">
+          <a href="#vi">Tiếng Việt</a>
+          <a href="./#en">Privacy policy</a>
+          <a href="./support.html">Support</a>
+        </nav>
+
+        <p class="notice">
+          Every figure for calories, protein, fat, carbohydrate and fibre in
+          MonChi is an <strong>estimate for one typical serving</strong>, meant
+          to make choosing dinner easier. They are not medical advice, do not
+          replace a doctor or registered dietitian, and are not intended to
+          treat or manage any condition. If you have a medical condition, are
+          pregnant or breastfeeding, or need a special diet, ask a professional
+          before relying on these numbers.
+        </p>
+
+        <div class="card">
+          <h2>1. Nutrient values of ingredients</h2>
+          <p>
+            Energy and nutrients of raw ingredients (per 100 g edible portion)
+            come from:
+          </p>
+          <ul>
+            <li>
+              National Institute of Nutrition, Ministry of Health of Viet Nam.
+              Food nutrient values, online lookup tool
+              <a
+                href="https://viendinhduong.vn/en/cong-cu-va-tien-ich/gia-tri-dinh-duong-thuc-pham"
+                rel="noopener"
+                >https://viendinhduong.vn/en/cong-cu-va-tien-ich/gia-tri-dinh-duong-thuc-pham</a
+              >. The weight of each ingredient in a recipe was extracted and
+              compiled by MonChi from that source.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>2. Nutrient values of reference dishes</h2>
+          <p>
+            Reference dishes are computed from recipes listing the weight of
+            each ingredient, using the values in section 1. The reference
+            recipes are based on:
+          </p>
+          <ul>
+            <li>
+              National Institute of Nutrition, Ministry of Health of Viet Nam.
+              Nutrient values of dishes, online lookup tool
+              <a
+                href="https://viendinhduong.vn/en/cong-cu-va-tien-ich/gia-tri-dinh-duong-mon-an"
+                rel="noopener"
+                >https://viendinhduong.vn/en/cong-cu-va-tien-ich/gia-tri-dinh-duong-mon-an</a
+              >
+            </li>
+          </ul>
+          <p>
+            For dishes you add or change yourself, the “AI chef” may re-estimate
+            the values from the recipe you describe (section 5).
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>3. Suggested daily energy and protein goals</h2>
+          <p>
+            Until you set your own goals, the app uses
+            <strong>2,000 kcal</strong> and
+            <strong>65 g of protein per day</strong> as a reference for a
+            moderately active adult. You can change both in the “Tôi” tab.
+            Basis:
+          </p>
+          <ul>
+            <li>
+              Ministry of Health of Viet Nam, National Institute of Nutrition.
+              <em>Recommended Dietary Allowances for Vietnamese</em>. Medical
+              Publishing House, 2016.
+              <a href="https://viendinhduong.vn/" rel="noopener"
+                >viendinhduong.vn</a
+              >
+            </li>
+            <li>
+              FAO/WHO/UNU. <em>Human energy requirements</em>. Report of a Joint
+              Expert Consultation, Rome, 2001 (FAO Food and Nutrition Technical
+              Report Series 1).
+              <a href="https://www.fao.org/4/y5686e/y5686e00.htm" rel="noopener"
+                >fao.org</a
+              >
+            </li>
+            <li>
+              WHO/FAO/UNU.
+              <em>Protein and amino acid requirements in human nutrition</em>.
+              WHO Technical Report Series 935, 2007 (0.83 g per kg body weight
+              per day for adults).
+              <a
+                href="https://www.who.int/publications/i/item/WHO-TRS-935"
+                rel="noopener"
+                >who.int</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>4. How the app calculates</h2>
+          <ul>
+            <li>
+              <strong>Energy from protein, carbohydrate and fat:</strong> 4, 4
+              and 9 kcal per gram (Atwater factors). FAO.
+              <em>Food energy – methods of analysis and conversion factors</em>.
+              FAO Food and Nutrition Paper 77, Rome, 2003.
+              <a href="https://www.fao.org/4/y5022e/y5022e00.htm" rel="noopener"
+                >fao.org</a
+              >
+            </li>
+            <li>
+              <strong>The “Lành mạnh” (balanced) badge on a recipe:</strong>
+              shown when a main meal has at most 750 kcal, at least 20 g of
+              protein, and fat provides at most 35% of its energy. 35% is the
+              upper bound of the Acceptable Macronutrient Distribution Range for
+              fat in adults (20–35% of energy), Institute of Medicine (US).
+              <em
+                >Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat,
+                Fatty Acids, Cholesterol, Protein, and Amino Acids</em
+              >. National Academies Press, 2005.
+              <a
+                href="https://nap.nationalacademies.org/catalog/10490"
+                rel="noopener"
+                >nap.nationalacademies.org</a
+              >. It is a simple hint, not a medical assessment.
+            </li>
+            <li>
+              <strong>Dinner suggestions:</strong> the app assumes dinner is
+              about 35% of the day's energy when it prefers dishes close to your
+              goal. This is a planning assumption, not a medical recommendation.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>5. AI estimates</h2>
+          <p>
+            For dishes you add yourself, the “AI chef” (a Google Gemini language
+            model) can estimate nutrition from the dish name and the ingredients
+            you describe, drawing on the sources in sections 1 and 2 and the
+            model's general knowledge. Such estimates can be off; the app always
+            labels them as estimates and you can edit them before saving.
+          </p>
+        </div>
+
+        <p class="muted">
+          Questions about the data? Use the
+          <a href="./support.html">support page</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
